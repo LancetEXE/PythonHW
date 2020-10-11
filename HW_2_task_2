@@ -1,0 +1,16 @@
+#  Для списка реализовать обмен значений соседних элементов, т.е.
+#  Значениями обмениваются элементы с индексами 0 и 1, 2 и 3 и т.д.
+#  При нечетном количестве элементов последний сохранить на своем месте.
+#  Для заполнения списка элементов необходимо использовать функцию input().
+
+
+elements = int(input("Введите количество элементов в создаваемом списке: "))
+elements_list = []
+i, element_num = 0, 0
+while i < elements:
+    elements_list.append(input("Введите необходимые данные: "))
+    i += 1
+for changes in range(int(len(elements_list)/2)):
+    elements_list[element_num], elements_list[element_num + 1] = elements_list[element_num + 1], elements_list[element_num]
+    element_num += 2
+print(elements_list)
