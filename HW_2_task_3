@@ -1,0 +1,34 @@
+#  Пользователь вводит месяц в виде целого числа от 1 до 12.
+#  Сообщить к какому времени года относится месяц (зима, весна, лето, осень).
+#  Напишите решения через list и через dict.
+
+month = int(input("Введите месяц года: "))
+month_list = ["Декабрь", "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь"]
+
+season_list = {"key_1": "Зима", "key_2": "Весна", "key_3": "Лето", "key_4": "Осень"}
+month_keys = {"winter": month_list[:3], "spring": month_list[3:6], "summer": month_list[6:9], "fall": month_list[9:]}
+
+if month == 12 or 2 >= month > 0:
+    season = season_list.get("key_1")
+    month_to_season = month_keys.get("winter")
+    print(f"Введенный месяц {month}, соответствует времени года {season}")
+    print(f"Этому времени года соответствуют месяцы {month_to_season}")
+elif 2 < month <= 5:
+    season = season_list.get("key_2")
+    month_to_season = month_keys.get("spring")
+    print(f"Введенный месяц {month}, соответствует времени года {season}")
+    print(f"Этому времени года соответствуют месяцы {month_to_season}")
+elif 5 < month <= 8:
+    season = season_list.get("key_3")
+    month_to_season = month_keys.get("summer")
+    print(f"Введенный месяц {month}, соответствует времени года {season}")
+    print(f"Этому времени года соответствуют месяцы {month_to_season}")
+elif 8 < month <= 11:
+    season = season_list.get("key_4")
+    month_to_season = month_keys.get("fall")
+    print(f"Введенный месяц {month}, соответствует времени года {season}")
+    print(f"Этому времени года соответствуют месяцы {month_to_season}")
+else:
+    print("Такой месяц не известен. Попробуйте еще раз ввести месясц в числовом значении.")
+
+# Упростил код, согласно рекомендациям Pycharm. В исходном коде было больше отсылок к переменной month
