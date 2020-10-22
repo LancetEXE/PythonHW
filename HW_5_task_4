@@ -1,0 +1,25 @@
+# Создать (не программно) текстовый файл со следующим содержимым:
+# One — 1
+# Two — 2
+# Three — 3
+# Four — 4
+# Необходимо написать программу, открывающую файл на чтение и считывающую построчно данные.
+# При этом английские числительные должны заменяться на русские.
+# Новый блок строк должен записываться в новый текстовый файл.
+
+translater = {'One': 'Один', 'Two': 'Два', 'Three': 'Три', 'Four': 'Четыре'}
+result_of_translate = []
+
+with open("fourth_file.txt", "r") as frth_f:
+    for line in frth_f:
+        translate_in = line.split(" вЂ", 1)
+        print(translate_in)
+        result_of_translate.append(translater[translate_in[0]] + " -" + translate_in[1])
+    print(result_of_translate)
+
+
+with open("fourth_file_translate.txt", "w") as frth_f_t:
+    frth_f_t.writelines(result_of_translate)
+
+
+#Дописать программу - убрать кавычки!!!

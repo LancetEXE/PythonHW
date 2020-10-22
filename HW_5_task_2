@@ -1,0 +1,14 @@
+# Создать текстовый файл (не программно), сохранить в нем несколько строк,
+# выполнить подсчет количества строк, количества слов в каждой строке.
+
+
+with open("second_file.txt", "r") as scnd_file:
+    content = scnd_file.readlines()
+    print(f"Количество строк в файле {len(content)}")
+
+with open("second_file.txt", "r") as scnd_file:
+    num_of_line = 1
+    for line in scnd_file:
+        content = line.split()
+        print(f"Количество слов в строке {num_of_line} составляет {len(content)} и состоит из следующих слов: {content}")
+        num_of_line += 1

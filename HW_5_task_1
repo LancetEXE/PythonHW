@@ -1,0 +1,17 @@
+# Создать программно файл в текстовом формате, записать в него построчно данные,
+# вводимые пользователем.
+# Об окончании ввода данных свидетельствует пустая строка.
+
+
+user_input_list = []
+while True:
+    user_data = input("Введите данные для внесения в файл: ")
+    if user_data == '':
+        print(user_input_list)
+        exit()
+    else:
+        new_data = user_data + "\n"
+        user_input_list.append(new_data)
+
+    with open("my_file.txt", "a+") as frst_file:
+        frst_file.writelines(user_input_list)

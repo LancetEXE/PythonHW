@@ -1,0 +1,5 @@
+Smith : 20000
+Jobs : 15000
+Cook : 22000
+Daniels : 12000
+Walker : 25000
