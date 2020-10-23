@@ -1,0 +1,47 @@
+# Создать класс TrafficLight (светофор) и определить у него один атрибут color (цвет)
+# и метод running (запуск). Атрибут реализовать как приватный.
+# В рамках метода реализовать переключение светофора в режимы: красный, желтый, зеленый.
+# Продолжительность первого состояния (красный) составляет 7 секунд,
+# второго (желтый) — 2 секунды, третьего (зеленый) — на ваше усмотрение.
+# Переключение между режимами должно осуществляться только в указанном порядке (красный, желтый, зеленый).
+# Проверить работу примера, создав экземпляр и вызвав описанный метод.
+# Задачу можно усложнить, реализовав проверку порядка режимов,
+# и при его нарушении выводить соответствующее сообщение и завершать скрипт.
+
+import time
+
+
+def out_red(text):
+    print("\033[31m {}" .format(text))
+
+
+def out_yellow(text):
+    print("\033[33m {}" .format(text))
+
+
+def out_green(text):
+    print("\033[32m {}" .format(text))
+
+
+class Trafficlight:
+    __color = ["red", "yellow", "green"]
+
+    @property
+    def running(self):
+        user_command = input("Нажмите Enter для запуска светофора: ")
+        while True:
+            if user_command == "q" or user_command == "Q":
+                out_red("Светофор завершил свою работу")
+                return False
+            else:
+                out_red(Trafficlight.__color[0])
+                time.sleep(7)
+                out_yellow(Trafficlight.__color[1])
+                time.sleep(2)
+                out_green(Trafficlight.__color[2])
+                time.sleep(7)
+                user_command = input("Нажмите Enter для продолжения работы светофора, для выхода введите q: ")
+
+
+Traffic = Trafficlight()
+Traffic.running
